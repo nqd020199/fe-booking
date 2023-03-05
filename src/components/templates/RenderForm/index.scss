@@ -1,0 +1,136 @@
+.t-form {
+    width: 100%;
+
+    p {
+        color: #bf1650;
+    }
+
+    p::before {
+        display: inline;
+        content: '⚠ ';
+    }
+
+    &_subbtn {
+        display: flex;
+
+        span {
+            margin-right: rem(5);
+            width: max-content;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            cursor: default;
+        }
+    }
+
+    &_change {
+        cursor: pointer;
+    }
+
+    &_heading {
+        .a-typography {
+            font-size: rem(36) !important;
+            line-height: rem(36) !important;
+        }
+    }
+
+}
+
+.a-button-t-form_btn_guest {
+    width: max-content;
+    padding: rem(8) rem(2) !important;
+
+    .a-typography {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+
+form {
+    margin-top: rem(20);
+
+    .a-input {
+        &_input {
+            padding: rem(10) rem(15);
+            border-radius: rem(8);
+            border-color: $dark-gray;
+            font-size: rem(14);
+            line-height: rem(21);
+            color: $jet !important;
+
+            &:hover {
+                border-color: $bright-Navy-blue;
+            }
+
+            &:focus {
+                border: rem(1) solid;
+                border-color: $bright-Navy-blue;
+            }
+        }
+
+        &_label {
+            margin-bottom: rem(5);
+            font-weight: 400;
+            font-size: rem(14);
+            line-height: rem(21);
+            text-transform: capitalize;
+        }
+    }
+
+    .t-form_btn {
+        @include adjust-flex(space-between, center);
+        margin: rem(15) rem(0) rem(15);
+
+        .a-button {
+            margin: 0;
+            width: 49%;
+            box-shadow: inset rem(0) rem(4) rem(4) rgba(0, 0, 0, 0.25);
+            border-radius: rem(8);
+            padding: 0.5rem 1.25rem;
+
+        }
+
+        &_guest {
+            width: max-content;
+        }
+
+        
+
+        
+    }
+    @include break-max(880px) {
+        .t-form_btn {
+            display: block;
+    
+            .a-button {
+                width: 100%;
+                margin: rem(10) rem(0);
+            }
+        }
+    }
+
+    &_btn {
+        @include adjust-flex(flex-start);
+        margin: rem(60) 0 rem(20);
+
+        .a-button {
+            padding: rem(10) rem(40);
+            display: inline;
+            width: rem(200);
+            border-radius: rem(8);
+
+
+            &:last-child {
+                margin-left: rem(10);
+                box-shadow: inset 0 rem(4) rem(4) $black-025;
+            }
+        }
+
+       
+    }
+
+}
+

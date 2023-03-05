@@ -1,0 +1,200 @@
+.t-serviceSetting {
+    width: 100%;
+    position: relative;
+
+
+    &_account {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .o-container {
+        padding-left: rem(20);
+        padding-right: rem(20);
+        @include break-max(rem(1100)) {
+            padding-left: rem(10);
+            padding-right: rem(10);
+        } 
+    }
+
+    .t-serviceSetting_wrapper {
+        width: 100%;
+    }
+
+    &_title {
+        margin: rem(0) 0 rem(24) rem(10);
+        min-height: rem(50);
+        @include break-max(rem(1100)) {
+            // width: calc(770px - $get-width);
+            transition: all 0.4s linear;
+            min-width: rem(340);
+        } 
+    }
+
+    &_addType {
+        min-width: none !important;
+        padding: rem(20) rem(20) rem(0);
+        background-color: $gray-blur;
+        margin: 0 10px !important;
+        border-radius: rem(20);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        &_title {
+            margin-bottom: rem(25);
+           
+    
+        }
+
+        &_list {
+            margin-left: rem(5);
+        }
+
+        &_item {
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 0 rem(4) rem(10);
+            border-radius: rem(20);
+            background-color: $columbia-blue;
+            padding: rem(8) rem(14);
+            width: fit-content;
+            max-width: 97%;
+            
+            .a-typography {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                overflow-x: hidden;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+            }
+        }
+
+        &_icon {
+            margin-left: rem(15);
+            cursor: pointer;
+        }
+
+        &-input {
+            width: 100%;
+            margin-top: rem(5);
+            transition: all 0.4s linear;
+            margin-left: 5px;
+
+            @include break-max(rem(1100)) {
+                width: calc(720px - $get-width);
+                transition: all 0.2s linear;
+            } 
+            @include break-max(rem(1024)) {
+                width: calc(100% - 8px);
+
+            } 
+        }
+
+        .t-department_input {
+            display: flex;
+            align-items: center;
+            margin-bottom: rem(10);
+
+            .a-input {
+                width: 100%;
+
+                &_error {
+                    display: none;
+                }
+                margin-right: 12px;
+            }
+            
+            .a-input_wrap_phone_number {
+                display: flex;
+                
+            }
+
+            .a-icon-26x26 {
+                min-width: rem(26);
+            }
+
+            // @include break-max(rem(980)) {
+                
+            // } 
+
+        }
+        @include break-max(rem(1100)) {
+            width: calc(750px - $get-width);
+            transition: all 0.2s linear;
+            min-width: rem(330);
+        } 
+        @include break-max(rem(1024)) {
+            width: calc(100% - 20px);
+        } 
+
+        @include break-max(rem(440)) {
+            height: 100%;
+            min-height: none !important;
+            overflow: scroll !important;
+        }
+    }
+
+    &_textAdd {
+        cursor: pointer;
+        @include adjust-flex(flex-start, center);
+        height: rem(50);
+        
+
+        .a-icon {
+            margin-right: rem(10);
+        }
+    }
+
+    &_input {
+        .a-input {
+            input {
+                height: rem(50);
+                border-radius: rem(8);
+                @include font-base();
+            }
+        }
+    }
+
+    &_btn {
+        @include adjust-flex();
+        margin: rem(60) rem(10) rem(20) rem(10);
+        transition: all 0.4s linear;
+        
+        @include break-max(rem(1100)) {
+            transition: all 0.4s linear;
+            width: calc(720px - $get-width);
+            // min-width: rem(370);
+        } 
+        @include break-max(rem(1024)) {
+            width: calc(100% - 20px);
+        } 
+
+        .a-button {
+            padding: rem(10) rem(40);
+            display: inline;
+            width: auto;
+            border-radius: rem(8);
+            width: calc((1060px - $get-width)/2);
+            max-width: rem(200);
+
+            &:last-child {
+                margin-left: rem(10);
+            }
+        }
+    }
+}
+
+.t-account_not-login {
+    @include adjust-flex(center, center);
+    flex-direction: column;
+    height: 50vh;
+
+    .a-button {
+        max-width: rem(200);
+        margin-top: rem(10);
+    }
+}

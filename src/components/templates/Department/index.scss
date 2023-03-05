@@ -1,0 +1,235 @@
+.t-serviceSetting {
+    max-height: calc(100vh - 139px);
+
+    .a-multiselect {
+        .css-1rhbuit-multiValue,
+        .css-1hb7zxy-IndicatorsContainer {
+            opacity: 0 !important;
+        }
+    }
+
+    &_mutilPullDown {
+        margin-top: rem(16);
+    }
+
+    &_input {
+        margin-top: rem(5);
+    }
+
+
+
+    &_addType {
+        min-height: 400px;
+    }
+}
+
+.t-account_not-login {
+    // @include adjust-flex(center, center);
+
+    .a-button {
+        max-width: rem(200);
+        margin-top: rem(10);
+    }
+}
+
+
+
+.t-department_input {
+    width: calc(100%);
+    display: flex;
+    justify-content: center;
+}
+
+.t-department_setting_text {
+    .a-typography,
+    .a-icon {
+        margin-bottom: 10px;
+    }
+    
+}
+
+
+.t-department_addType_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+    overflow: scroll;
+    height: 100%;
+    min-height: 300px;
+    grid-auto-rows: min-content;
+
+    &_item {
+        box-shadow: rem(7) rem(7) rem(22) $columbia-blue, inset rem(-1) rem(-1) rem(2) $black-02;
+        border-radius: rem(10);
+        height: rem(70);
+        margin: rem(10) rem(25) !important;
+        padding: 0 rem(15);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        &:hover {
+            background-color: $columbia-blue;
+        }
+
+        @include break-max(rem(440)) {
+            max-width: calc(100vw - 140px);
+            margin: rem(10) rem(5) !important;
+
+            .item_dept {
+                max-width: calc(100vw - 195px);
+                width: calc(100vw - 195px);
+                overflow: hidden;
+                
+                .a-typography {
+                    max-width: 195px !important;
+                    width: 100% !important;
+                    text-overflow: ellipsis !important;
+                }
+            }
+
+        } 
+
+    }
+    
+    .edit-dept {
+        position: relative;
+        display: block;
+        
+        &_option {
+            position: absolute;
+            width: rem(160);
+            background-color: $white;
+            padding: rem(7);
+            right: 0;
+            border-radius: rem(8);
+            box-shadow: rem(7) rem(7) rem(22) $columbia-blue, inset rem(-1) rem(-1) rem(2) $black-02;
+            z-index: 10;
+            margin-top: rem(5);
+        }
+        
+        &_item {
+            margin: rem(5) rem(0);
+            padding: rem(3) rem(10);
+            cursor: pointer;
+
+            &:hover {
+                background-color: $bright-Navy-blue;
+                border-radius: rem(8);
+
+                .a-typography {
+                    color: $white;
+                }
+            }
+        }
+    }
+    @include break-max(rem(440)) {
+        grid-template-columns: repeat(1, 1fr);
+    } 
+}
+
+.wrapper-popup_update {
+    &-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: rem(10) rem(0);
+
+        .a-input {
+            width: calc(100% - 120px);
+
+            &_input {
+                height: rem(40);
+            }
+
+            &_error {
+                display: none;
+            }
+        }
+
+        .a-typography {
+            width: 120px;
+            text-align: start;
+        }
+    }
+
+    &-phone_number {
+        display: flex;
+        width: 70%;
+        @include break-max(rem(440)) {
+            width: 100%;
+        } 
+    }
+
+    &-additon {
+        align-items: flex-start;
+
+        .a-textarea {
+            width: calc(100% - 120px);
+
+            &_input {
+                padding: rem(8) rem(10) !important;
+            }
+        }
+    }
+
+    &_btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+        margin-left: 120px;
+
+        .a-button {
+            max-width: rem(177);
+            margin: 0 rem(9);
+        }
+    }
+}
+
+.t-department_popup_delete {
+    height: 250px;
+    max-width: 430px;
+    width: 430px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .a-typography {
+        overflow-wrap: break-word;
+        text-align: center;
+    }
+
+    .a-icon {
+        margin-left: 40%;
+    }
+
+    &_btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .a-button {
+            width: 45%;
+        }
+
+    }
+
+    @include break-max(rem(440)) {
+        max-width: calc(100vw - 50px);
+        width: calc(100vw - 50px);
+    } 
+}
+
+.t-department_wrapper {
+    .t-serviceSetting_addType {
+        min-height: 60vh;
+        @include break-max(rem(440)) {
+            overflow: scroll;
+            height: 100%;
+            min-height: none;
+        }
+    } 
+}

@@ -1,0 +1,74 @@
+.p-calendar_department {
+    position: absolute;
+    top: 25px;
+    left: calc((100vw - 350px) / 2);
+
+    @include break-max(rem(1920)) {
+        left: calc((100vw - 290px) / 2);
+    }
+
+    @include break-max(rem(1470)) {
+        left: calc((100vw - 300px) / 2);
+    }
+
+    @include break-max(rem(780)) {
+        left: calc((100vw - 250px) / 2);
+    }
+    
+
+    &-showbar {
+        position: absolute;
+        top: 25px;
+        left: calc((100vw - 600px) / 2);
+
+        @include break-max(rem(1920)) {
+            left: calc((100vw - 600px) / 2);
+        }
+        @include break-max(rem(1100)) {
+            left: 20px;
+        }
+        @include break-max(rem(1024)) {
+            left: calc((100vw - 300px) / 2);
+        }
+        // @include break-max(rem(1245)) {
+        //     left: calc((100vw - 400px) / 2);
+        // }
+    }
+}
+
+.popup-note {
+    .popup-note_wrapper {
+        height: rem(349);
+        
+
+        &_header {
+            height: rem(50);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $bright-Navy-blue;
+        }
+
+        &_content {
+            padding: rem(25) rem(30);
+
+            .a-textarea {
+                margin-top: rem(8);
+
+            }
+        }
+
+        &_btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+
+            .a-button {
+                width: rem(200);
+                margin: rem(0) rem(20);
+            }
+        }
+    }
+}

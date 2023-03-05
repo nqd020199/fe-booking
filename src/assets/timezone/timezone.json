@@ -1,0 +1,111 @@
+[
+  {
+    "value": "SE Asia Standard Time",
+    "abbr": "SAST",
+    "offset": 7,
+    "isdst": false,
+    "utc": "UTC+7",
+    "country":["Bangkok","Vietnamese","Jakarta"]
+
+  },
+  {
+    "value": "N. Central Asia Standard Time",
+    "abbr": "NCAST",
+    "offset": 7,
+    "isdst": false,
+    "utc": "UTC+7",
+    "country":["Novosibirsk"]
+
+  },
+  {
+    "value": "China Standard Time",
+    "abbr": "CST",
+    "offset": 8,
+    "isdst": false,
+    "utc": "UTC+8",
+    "country":["Beijing","Chongqing","Hong Kong","Urumqi"]
+
+  },
+  {
+    "value": "North Asia Standard Time",
+    "abbr": "NAST",
+    "offset": 8,
+    "isdst": false,
+    "utc": "(UTC+08:00) Krasnoyarsk",
+    "country":["Krasnoyarsk"]
+
+  },
+  {
+    "value": "Singapore Standard Time",
+    "abbr": "MPST",
+    "offset": 8,
+    "isdst": false,
+    "utc": "(UTC+08:00) Kuala Lumpur, Singapore",
+    "country":["Kuala Lumpur","Singapore"]
+
+  },
+  {
+    "value": "W. Australia Standard Time",
+    "abbr": "WAST",
+    "offset": 8,
+    "isdst": false,
+    "utc": "(UTC+08:00) Perth",
+    "country":["Perth"]
+  },
+  {
+    "value": "Taipei Standard Time",
+    "abbr": "TST",
+    "offset": 8,
+    "isdst": false,
+    "utc": "(UTC+08:00) Taipei",
+    "country":["Taipei"]
+  },
+  {
+    "value": "Ulaanbaatar Standard Time",
+    "abbr": "UST",
+    "offset": 8,
+    "isdst": false,
+    "utc": "(UTC+08:00) Ulaanbaatar",
+    "country":["Ulaanbaatar"]
+  },
+  {
+    "value": "North Asia East Standard Time",
+    "abbr": "NAEST",
+    "offset": 9,
+    "isdst": false,
+    "utc": "(UTC+09:00) Irkutsk",
+    "country":["Irkutsk"]
+  },
+  {
+    "value": "Tokyo Standard Time",
+    "abbr": "TST",
+    "offset": 9,
+    "isdst": false,
+    "utc": "(UTC+09:00) Osaka, Sapporo, Tokyo",
+    "country":["Osaka","Sapporo","Tokyo"]
+  },
+  {
+    "value": "Korea Standard Time",
+    "abbr": "KST",
+    "offset": 9,
+    "isdst": false,
+    "utc": "(UTC+09:00) Seoul",
+    "country":["Seoul"]
+  },
+  {
+    "value": "Cen. Australia Standard Time",
+    "abbr": "CAST",
+    "offset": 9.5,
+    "isdst": false,
+    "utc": "(UTC+09:30) Adelaide",
+    "country":["Adelaide"]
+  },
+  {
+    "value": "AUS Central Standard Time",
+    "abbr": "ACST",
+    "offset": 9.5,
+    "isdst": false,
+    "utc": "(UTC+09:30) Darwin",
+    "country":["Darwin"]
+  }
+]

@@ -1,0 +1,248 @@
+.o-carousel {
+    $root: &;
+    position: relative;
+
+    &_arrow {
+        $arrow: &;
+        background: transparent;
+        border-radius: 0;
+        height: rem(64);
+        transition: $transition-long ease;
+        width: rem(64);
+        z-index: $z-1;
+
+        @include tablet-down {
+            height: rem(40);
+            width: rem(40);
+        }
+
+        @include mobile-down {
+            height: rem(36);
+            width: rem(36);
+        }
+
+        &::before {
+            background-color: transparent;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: rem(24);
+            content: '';
+            display: block;
+            height: 100%;
+            transition: $transition-long ease;
+            width: 100%;
+            opacity: 1;
+
+            @include tablet-down {
+                background-size: rem(15);
+            }
+        }
+
+        &:not(.slick-disabled):hover {
+
+            &#{$arrow}_prev {
+                &-defaultArrow {
+                    &::before {
+                        background-image: url('~assets/icons/ic_prev_blue.svg');
+                    }
+                }
+
+                &-castletonArrow {
+                    // background: $black;
+
+                    &::before {
+                        background-image: url('~assets/icons/ic_prev_blue.svg');
+                    }
+                }
+            }
+
+            &#{$arrow}_next {
+                &-defaultArrow {
+                    &::before {
+                        background-image: url('~assets/icons/ic_next_blue.svg');
+                    }
+                }
+
+                &-castletonArrow {
+                    &::before {
+                        background-image: url('~assets/icons/ic_next_blue.svg');
+                    }
+                }
+            }
+        }
+
+        &_prev {
+            left: rem(-65);
+
+            @include tablet-down {
+                left: rem(-40);
+            }
+
+            &::before {
+                background-image: url('~assets/icons/ic_prev_gray.svg');
+                background-size: rem(32);
+                @include mobile-down {
+                    background-size: rem(20);
+                }
+            }
+
+            &-newsEventList {
+                &::before {
+                    background-image: url('~assets/icons/ic_prev_gray.svg');
+                    background-size: rem(21);
+                }
+                
+            }
+        }
+
+        &_next {
+            right: rem(-65);
+
+            @include tablet-down {
+                right: rem(-40);
+            }
+
+            &::before {
+                background-image: url('~assets/icons/ic_next_gray.svg');
+                background-size: rem(32);
+                @include mobile-down {
+                    background-size: rem(20);
+                }
+            }
+
+            &-newsEventList {
+                &::before {
+                    background-image: url('~assets/icons/ic_next_gray.svg');
+                    background-size: rem(21);
+                }
+                
+            }
+        }
+
+        &.banner {
+            &#{$arrow}_prev {
+                left: rem(56);
+
+                @include mobile-down {
+                    left: rem(30);
+                }
+            }
+
+            &#{$arrow}_next {
+                right: rem(56);
+
+                @include mobile-down {
+                    right: rem(30);
+                }
+            }
+        }
+
+        &.default {
+            border: 1px solid $may-green;
+            height: rem(40);
+            width: rem(40);
+
+            @include tablet-down {
+                height: rem(32);
+                width: rem(32);
+            }
+
+            &::before {
+                background-size: rem(15);
+            }
+        }
+
+        &.memberCompanies {
+            &#{$arrow}_prev {
+                left: rem(-74);
+
+                @include break-max(1365px) {
+                    left: rem(-54);
+                }
+
+                @include desktop-down {
+                    left: rem(-20);
+                }
+
+                @include small-mobile {
+                    left: rem(6);
+                }
+            }
+
+            &#{$arrow}_next {
+                right: rem(-74);
+
+                @include break-max(1365px) {
+                    right: rem(-54);
+                }
+
+                @include desktop-down {
+                    right: rem(-20);
+                }
+
+                @include small-mobile {
+                    right: rem(6);
+                }
+            }
+        }
+    }
+
+    .slick-dots {
+        bottom: rem(29.75);
+
+        @include mobile-down {
+            bottom: rem(12);
+        }
+
+        li {
+            width: rem(10);
+            height: rem(10);
+            margin-left: rem(4.3);
+            margin-right: rem(4.3);
+
+            
+            @include mobile-down {
+                margin-left: rem(4.5);
+                margin-right: rem(4.5);
+            }
+        }
+
+        button {
+            background-color: $white;
+            border-radius: 50%;
+            height: rem(10);
+            width: rem(10);
+
+            @include mobile-down {
+                height: rem(9);
+                width: rem(9);
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+
+        .slick-active {
+            button {
+                background-color: $black;
+                height: rem(10);
+                width: rem(10);
+                opacity: 0.8;
+
+                @include mobile-down {
+                    height: rem(9);
+                    width: rem(9);
+                }
+
+                .o-heroBanner & {
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    // .slick-cloned {
+    //     display: none;
+    // }
+}

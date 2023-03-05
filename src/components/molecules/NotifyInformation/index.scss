@@ -1,0 +1,106 @@
+.m-notify-infos {
+    @include adjust-flex(flex-start,start);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    &_left {
+        height: 100%;
+        min-width: 432px;
+        padding: rem(40) rem(0) rem(40) rem(30);
+        @include adjust-flex(space-between, start);
+        flex-direction: column;
+        width: 100%;
+        
+        &_content {
+            height: 100%;
+
+            &_name {
+                @include break-max(rem(440)) {
+                    .a-typography {
+                        font-size: 24px;
+                    }
+                }
+        
+            }
+
+            &_desc {
+                margin: 21px 0 10px;
+            }
+
+            &_task {
+                @include adjust-flex(flex-start,start);
+                padding: 5px 0;
+
+                .a-icon {
+                    min-width: 30px;
+                    margin-right: rem(13);
+                }
+            }
+
+            &_recommend {
+                margin: 10px 0;
+            }
+
+            @include break-max(440) {
+                max-width: calc(110vw - 20px);
+            }
+        }
+
+        &_btn {
+            width: 100%;
+            @include adjust-flex(flex-start, start);
+
+            .a-button {
+                max-width: 129px;
+                margin-right: 130px;
+                transition: all 0.5s ease;
+            }
+            @include break-max(rem(440)) {
+                width: 100%;
+                justify-content: end;
+                margin-top: rem(20);
+
+                .a-button {
+                    margin-right: unset;
+                }
+            }
+        }
+        
+        @include break-max(rem(440)) {
+            min-width: unset;
+            padding: rem(20);
+            height: 100%;
+        }
+
+    }
+
+    &_right {
+        transform: translate(90px, 88px);
+
+        &_calendar {
+            width: 400px;
+            height: 510px;
+            background: linear-gradient(180deg, #3f88d0 0%, #7aacdd 77.08%, #428dd8 99.98%, #99bcdf 99.99%);
+            position: relative;
+            z-index: 1;
+            transform: rotate(-20deg);
+
+            &::after {
+                content: url('../../../assets/images/calendar-login.png');
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 10;
+            }
+        }
+        @include break-max(rem(440)) {
+            display: none;
+        }
+    }
+    @include break-max(rem(440)) {
+        padding: 10px !important;
+        width: 100%;
+    }
+}

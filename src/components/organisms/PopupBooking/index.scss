@@ -1,0 +1,169 @@
+.o-booking {
+    $root: &;
+    margin: 0 rem(30);
+    @include break-max(rem(440)) {
+        width: calc(100vw - 20px);
+        overflow: hidden;
+        margin: 0;
+    }
+
+    &_title {
+        &_desc {
+            background-color: $bright-Navy-blue;
+            padding: rem(18) 0;
+            margin: 0 rem(-30);
+            position: relative;
+
+            @include break-max(rem(440)) {
+                @include adjust-flex();
+                width: calc(100vw + 10px);
+
+                &_close {
+                    position: absolute;
+                    right: 10px;
+
+                }
+            }
+        }       
+    }
+
+    &_content {
+        padding: 0 12px;
+    }
+
+    &_time {
+        @include adjust-flex(space-between);
+        margin-top: rem(20);
+
+        @include break-max(rem(440)) {
+            flex-wrap: wrap;
+        }
+
+        &_hours {
+            @include adjust-flex(flex-start);
+            @include break-max(rem(440)) {
+                @include adjust-flex(space-between);
+                flex: 10;
+                
+                .o-booking_time_end {
+                    margin-right: 0;
+
+                    
+                    input {
+                        margin-right: 0 !important;
+                    }
+
+                    .o-customDate_input {
+                        .a-icon {
+                            left: 73%;
+                        }
+                    }
+                }
+
+                .o-booking_time_start {
+                    margin-right: 14px;
+
+                    .o-customDate_input {
+                        margin-left: 5px;
+
+                        .a-icon {
+                            left: 65%;
+                        }
+                    }
+
+                    .a-typography {
+                        min-width: rem(56);
+                    }
+                }
+            }
+        }
+
+        &_days {
+            input {
+                width: rem(186);
+                margin-right: 0;
+                @include break-max(rem(440)) {
+                    width: calc(100vw - 115px);
+                }
+            }  
+
+            .a-icon {
+                left: 75%;
+            }
+            @include break-max(rem(440)) {
+                margin-top: 8px;
+                width: 100%;
+
+                .a-icon {
+                    left: 90%;
+                }
+    
+                .a-typography {
+                    width: max-content;
+                }
+
+                .o-customDate {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+
+        }
+    }
+
+    &_personality {
+        margin-top: rem(15);
+
+        .a-typography {
+            margin-bottom: rem(5);
+        }
+
+        @include break-max(rem(440)) {
+            width: calc(100vw - 44px);
+        }
+    }
+
+    &_service {
+        margin-top: rem(25);
+        @include break-max(rem(440)) {
+            width: calc(100vw - 44px);
+        }
+
+        .m-pulldown {
+            z-index: 0;
+
+            .m-pulldown_label {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &_detail {
+        margin-top: rem(25);
+        @include break-max(rem(440)) {
+            width: calc(100vw - 44px);
+        }
+    }
+
+    &_btn {
+        @include adjust-flex(flex-end);
+        margin: rem(50) 0 rem(20);
+        @include break-max(rem(440)) {
+            @include adjust-flex(center);
+            width: calc(100vw - 30px);
+        }
+        
+        .a-button {
+            padding: rem(10) rem(40);
+            display: inline;
+            width: auto;
+            border-radius: rem(8);
+
+
+            &:last-child {
+                margin-left: rem(10);
+            }
+        }
+    }
+}

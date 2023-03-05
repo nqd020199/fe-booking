@@ -1,0 +1,171 @@
+.t-domain {
+    width: 100%;
+    position: relative;
+
+    .o-container {
+        padding-left: rem(20);
+        padding-right: rem(20);
+        display: flex;
+        flex-direction: column;
+        @include break-max(rem(1100)) {
+            padding-left: rem(10);
+            padding-right: rem(10);
+        } 
+    }
+
+    .t-domain_wrapper {
+        width: 100%;
+    }
+
+    &_title {
+        margin: rem(0) 0 rem(24) rem(10);
+        min-height: rem(50);
+        @include break-max(rem(1100)) {
+            // width: calc(770px - $get-width);
+            transition: all 0.4s linear;
+            min-width: rem(340);
+        } 
+    }
+
+    &_addType {
+        min-width: none !important;
+        padding: rem(20) rem(20) rem(20);
+        background-color: $gray-blur;
+        margin: 0 10px !important;
+        border-radius: rem(20);
+        overflow: hidden;
+        height: rem(519);
+
+        @include break-max(rem(1100)) {
+            width: calc(750px - $get-width);
+            transition: all 0.2s linear;
+            min-width: rem(330);
+        } 
+        @include break-max(rem(1024)) {
+            width: calc(100% - 20px);
+        } 
+
+
+        &_title {
+            margin-bottom: rem(25);
+        }
+
+        &_list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+
+            &_item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                margin: rem(8) rem(0);
+
+                &_icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-left: rem(20);
+                }
+
+                .a-input {
+                    width: 40%;
+
+                    input {
+                        height: rem(36);
+                        border-radius: rem(8);
+                        @include font-base();
+                    }
+
+                    &:first-child {
+                        margin-right: rem(21);
+
+                        input {
+                            border: rem(1) solid $jet;
+                            background: $bg-gray-blur;
+                            cursor: no-drop;
+                        }
+                    };
+
+                    &_error {
+                        display: none;
+                    }
+                }
+
+                &_icon_edit {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+    
+                }
+            }
+        }
+
+        &_text {
+            margin-left: 9%;
+        }
+    }
+
+    &_textAdd {
+        cursor: pointer;
+        @include adjust-flex(flex-start);
+        height: rem(50);
+        
+
+        .a-icon {
+            margin-right: rem(10);
+        }
+    }
+
+    &_input {
+        .a-input {
+            input {
+                height: rem(50);
+                border-radius: rem(8);
+                @include font-base();
+            }
+        }
+    }
+
+    &_btn {
+        @include adjust-flex();
+        margin: rem(60) rem(10) rem(20) rem(10);
+        transition: all 0.4s linear;
+        
+        @include break-max(rem(1100)) {
+            transition: all 0.4s linear;
+            width: calc(720px - $get-width);
+            // min-width: rem(370);
+        } 
+        @include break-max(rem(1024)) {
+            width: calc(100% - 20px);
+        } 
+
+        .a-button {
+            padding: rem(10) rem(40);
+            display: inline;
+            width: auto;
+            border-radius: rem(8);
+            width: calc((1060px - $get-width)/2);
+            max-width: rem(200);
+
+            &:last-child {
+                margin-left: rem(10);
+            }
+        }
+    }
+}
+
+.t-account_not-login {
+    @include adjust-flex(center, center);
+    flex-direction: column;
+    height: 50vh;
+
+    .a-button {
+        max-width: rem(200);
+        margin-top: rem(10);
+    }
+}

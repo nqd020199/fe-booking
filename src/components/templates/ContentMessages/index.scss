@@ -1,0 +1,355 @@
+/* stylelint-disable max-nesting-depth */
+$height: rem(48);
+
+.t-contentMessage {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10% 67% 23%;
+    overflow: hidden;
+    border-width: 0 rem(1);
+    border-style: solid;
+    border-color: $gainsboro;
+
+    &-countLine {
+        grid-template-rows: 10% 60% 30%;
+    }
+
+    &_header {
+        max-height: rem(80);
+        border-bottom: rem(3) solid  $columbia-blue;
+
+    }
+
+    &_avatar {
+        .a-image {
+            img {
+                width: rem(44);
+                height: rem(44);
+                border-radius: 50%;
+                border: rem(2) solid $bright-Navy-blue;
+            }
+        }
+    }
+
+    &_details {
+        min-height: rem(44);
+        cursor: pointer;
+        width: 100%;
+        @include adjust-flex(flex-start, center);
+        padding: rem(12);
+    }
+
+    &_info {
+        margin-left: rem(17);
+
+        &-personality {
+            @include text-overflow(1); 
+        }
+    }
+
+   
+    &_chat {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        padding: 0 rem(12);
+
+        div:first-child {
+            margin-top: auto;
+        }
+
+        &-loading {
+            div:first-child {
+                margin-top: inherit;
+            } 
+        }
+
+        &-message {
+            display: flex;
+            align-items: center;
+            
+            .timeContent {
+                @include adjust-flex(flex-start,end);
+                margin: rem(8) 0;
+
+                .a-typography-12x18 {
+                    padding: 0 rem(16);
+                }
+            }
+
+            .a-icon,
+            .a-image {
+                max-width: rem(44);
+                min-width: rem(44);
+                height: rem(44);
+                border-radius: 50%;
+            }
+
+            .content {
+                max-width: 70%;
+                overflow-wrap: break-word;
+                padding: rem(16);
+                border-radius: 1rem;
+                position: relative;
+
+                .a-typography {
+                    width: 100%;
+                    height: 100%;
+
+                    iframe {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                &-media,
+                &-video {
+                    border-radius: 0 !important;
+                    background-color: transparent !important;
+                    margin: rem(10) 0 !important;
+                    padding: 0 !important;
+                }
+
+                &-media {
+                    &-content {
+                        max-width: rem(440);
+                        min-width: rem(440);
+                        max-height: rem(220);
+                        min-height: rem(220);
+
+                        .o-player_video {
+                            video {
+                                width: 88%;
+                            }
+                        }
+                    }
+                }
+
+                @media screen and (min-width: 720px) and (max-width: 1080px) {
+                    max-width: 70%;
+                }
+
+                a {
+                    text-decoration: underline;
+                    color: $bright-Navy-blue;
+                }
+
+                &-media_image {
+                    .a-image {
+                        max-width: rem(220);
+                        min-width: rem(100);
+                        max-height: rem(220);
+                        min-height: rem(100);
+                    }
+                }
+
+                &-media_file {
+                    @include adjust-flex(center, end);
+                    margin: 0 rem(20);
+                    padding: 0 rem(25);
+
+                    &-icon {
+                        max-width: rem(50);
+                        min-width: rem(50);
+                        max-height: rem(200);
+                        margin: 0 rem(5);
+                    }
+
+                    &-desc {
+                        @include adjust-flex();
+                        margin: 0 rem(10) rem(5);
+                    }
+                }
+
+                &-video {
+                    max-width: rem(440);
+                    min-width: rem(440);
+                    max-height: rem(220);
+                    min-height: rem(220);
+
+                    .o-player_video {
+                        padding-bottom: 50%;
+                    }
+                }
+            }
+        }
+
+        .recieved {
+            justify-content: flex-start;
+            align-items: end;
+
+            .content {
+                margin-left: rem(16);
+                background-color: $anti-flash-white;
+                border-radius: 16px 16px 16px 0;
+            }
+
+            .timeContent {
+                margin-left: rem(16);
+            }
+        }
+
+        .sended {
+            justify-content: flex-end;
+
+            .timeContent {
+                @include adjust-flex(flex-end,end);
+                margin: rem(8) 0;
+            }
+
+            .content {
+                background-color: $columbia-blue;
+                border-radius: 16px 16px 0;
+
+                &-media {
+                    audio {
+                        margin-right: rem(50);
+                    }
+                }
+            }
+        }
+    }
+    
+
+    &_chatInput {
+        padding: 0 rem(12);
+        position: relative;
+
+        .t-chatInput {
+            border: rem(1) solid $silver;
+            border-radius: rem(12);
+
+
+            &_input {
+                @include adjust-flex(flex-start);
+
+                border-bottom: rem(1) solid $silver;
+
+                .a-textarea {
+                    flex: 1;
+                    max-height: $height;
+                    max-width: 94%;
+
+                    &_input {
+                        border: transparent;
+                        border-radius: 0;
+                        border-left: rem(1) solid $silver;
+                        height: $height;
+                    }
+                }
+
+                .emoji {
+                    position: relative;
+                    padding: 0 rem(10);
+
+                    svg {
+                        font-size: rem(24);
+                        color: $bright-Navy-blue;
+                    }
+
+                    .EmojiPickerReact {
+                        position: absolute;
+                        top: rem(-465);
+                        overflow: unset !important;
+                    }
+                }
+
+            }
+
+            &_voice {
+                position: absolute;
+                top: -25%;
+                left: 1%;
+                width: rem(220);
+                height: rem(56);
+                background: $alice-blue;
+                border-radius: rem(12);
+                box-shadow: 0 0 rem(4) $black-025;
+                
+                &-wrap {
+                    padding: rem(10);
+                    @include adjust-flex(space-between);
+                    position: relative;
+                }
+
+                &-loading {
+                    width: rem(71);
+                    height: rem(34);
+                }
+
+                &-timer {
+                    background-color: $columbia-blue;
+                    padding: rem(6) rem(12);
+                    border-radius: rem(21);
+                }
+
+                &-close {
+                    position: absolute;
+                    top: -17%;
+                    right: -2%;
+                }
+
+            }
+
+            &_button {
+                min-height: $height;
+                @include adjust-flex(space-between);
+                padding: 0 rem(12);
+                background: $anti-flash-white;
+                border-bottom-left-radius: rem(12);
+                border-bottom-right-radius: rem(12);
+
+                &-icon {
+                    @include adjust-flex(flex-start);
+
+
+                    .icon-bg {
+                        &:last-child {
+                            margin-left: rem(10);
+                        }
+
+                        &:hover {
+                            background: $white !important;
+                            border-radius: rem(8);
+                        }
+
+                        &_input {
+                            opacity: 0;
+                            visibility: hidden;
+                            position: absolute;
+                        }
+                    }
+                }
+
+               
+
+                .a-button {
+                    width: max-content;
+                    text-transform: uppercase;
+                    max-height: rem(28);
+                }
+
+            
+            }
+
+        }
+    }
+
+    &-countLine {
+        grid-template-rows: 10% 63% 37%;
+
+        .a-textarea {
+            max-height: $height * 2 !important;
+
+            height: $height * 2 !important;
+
+            &_input {
+                height: $height * 2 !important;
+
+            }
+        }
+    }
+}

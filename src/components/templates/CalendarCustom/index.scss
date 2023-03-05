@@ -1,0 +1,388 @@
+
+.rbc-month-view {
+    min-height: rem(780);
+
+    .rbc-month-header {
+        min-height: rem(70);
+
+        .rbc-header {
+            @include adjust-flex();
+
+            span {
+                color: $bright-Navy-blue;
+                @include font-base(); 
+            }
+        }
+    }
+
+    .rbc-event-content {
+        margin-top: rem(3);
+    }
+    
+    pointer-events: none !important;
+    cursor: default;
+    text-decoration: none;
+}
+
+.rbc-timeslot-group {
+    min-height: rem(38) !important;
+    min-width: rem(90) !important;
+
+    .rbc-time-slot {
+        @include adjust-flex();
+        width: rem(125) !important;
+        @include break-max(rem(1024)) {
+            width: inherit !important;
+            padding: rem(3.5);
+
+            .rbc-label {
+                font-size: rem(13);
+            }
+        }
+
+    }
+}
+
+.rbc-event-label {
+    display: none !important;
+    border-radius: rem(3) !important;
+
+}
+
+.rbc-event {
+    border: unset !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+    overflow: inherit !important;
+}
+
+    
+
+.rbc-day-slot {
+    .rbc-events-container {
+        margin-right: 0 !important;
+    }
+}
+
+.rbc-header {
+    @include adjust-flex();
+    width: rem(125) !important;
+    min-width: rem(125) !important;
+}
+
+
+.t-component {
+    $root: &;
+    background-color: $blue-blur;
+    height: 100%;
+    color: $white;
+    border-radius: rem(10);
+    padding: rem(4) rem(8);
+    position: relative;
+    outline: 1px solid $white;
+
+    &_month {
+        border-radius: rem(3);
+    }
+
+    span {
+        margin-right: rem(10);
+    }
+
+    &-mypage_mybooking_department,
+    &-otherpage_guestbooking_department,
+    &-otherpage_mybooking_department {
+        background-color: $bright-Navy-blue;
+        color: $jet;
+    }
+
+    &-mypage_mybooking_diff_department,
+    &-otherpage_guestbooking_diff_department,
+    &-otherpage_mybooking_diff_department {
+        background-color: $blue-blur;
+        color: $jet;
+    }
+    
+    &-otherpage_otherbooking_department,
+    &-mypage_guestbooking_department,
+    &-mypage_otherbooking_department,
+    &-mypage_guestbooking_diff_department,
+    &-mypage_otherbooking_diff_department,
+    &-otherpage_otherbooking_diff_department {
+        background-color: $dark-gray;
+        color: $jet;
+    }
+
+    &_hover {
+        position: absolute;
+        width: 140%;
+        max-width: rem(400);
+        max-height: rem(400);
+        min-width: 170px;
+        bottom: calc(100% + 15px);
+        top: unset;
+        left: unset;
+        right: 0;
+        background-color: $white;
+        box-shadow: 0 rem(2) rem(10) $jet;
+        border-radius: rem(10);
+        z-index: 99;
+        padding: rem(12);
+        overflow: scroll;
+        @include font-base();
+
+        
+
+        &-top {
+            bottom: unset;
+            top: calc(100% + 15px);
+
+        }
+
+        &-right {
+            right: unset;
+            left: 0;
+        }
+
+        ul {
+            width: 100%;
+
+            li {
+                width: 100%;
+                padding: rem(2) 0;
+                color: $jet;
+                font-size: rem(14) !important;
+                line-height: rem(21) !important;
+            }
+        }
+    }
+
+    &_personality {
+        color: $white;
+        font-size: rem(12) !important;
+        line-height: rem(14) !important;
+        @include  text-overflow(1);
+
+        @include mobile-down {
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: rem(14) !important;
+            line-height: rem(21) !important;
+        }
+    }
+
+    &_detail {
+        @include  text-overflow(1);
+        font-size: rem(12) !important;
+        line-height: rem(14) !important;
+
+    }
+
+    &_guest_detail {
+        @include  text-overflow(2);
+        font-size: rem(12) !important;
+        line-height: rem(14) !important;
+
+    }
+}
+
+.rbc-overlay {
+    .rbc-event-content {
+        margin-top: rem(3);
+    }
+}
+
+.t-calendarCustom {
+    z-index: 0;
+}
+
+.rbc-time-view {
+    border-top: 1px solid #ddd !important;
+    overflow: scroll;
+
+    .rbc-time-header-cell {
+        .rbc-header {
+            min-height: rem(50);
+            min-width: rem(90) !important;
+            
+            @include break-max(rem(720)) {
+                max-width: rem(89) !important;
+
+            }
+
+
+            &:first-child {
+                min-width: rem(89) !important;
+
+            }
+        }
+
+        .rbc-addons-dnd-row-body {
+            .rbc-row {
+                border-top: 1px solid $dim-gray !important;
+            }
+        }
+
+        .rbc-time-header-cell {
+            height: auto !important;
+    
+        }
+        
+    }
+
+    .rbc-time-header {
+        margin: 0 2px;
+
+        
+
+        @include break-max(rem(720)) {
+            width: max-content;
+        }
+
+        .rbc-time-header-gutter {
+            position: relative;
+            
+            @include break-max(rem(1280)) {
+                min-width: 89px !important;
+                padding: 0;
+            }
+            
+
+            &::after {
+                content: '';
+                position: absolute;
+                padding: rem(0) rem(5);
+                max-width: 50%;
+                text-align: center;
+                font-size: rem(14);
+                font-weight: 600;
+                @include break-max(rem(1024)) {
+                    font-size: rem(12);
+                }
+            }
+        }
+
+        .rbc-time-header-content {
+            .rbc-header {
+                border-bottom: unset;
+
+                button {
+                    font-size: rem(14);
+                    font-weight: 700;
+                    line-height: rem(24);
+                    color: $bright-Navy-blue !important;
+                    font-family: 'Noto Sans KR',sans-serif !important;
+                }
+            }
+        }
+    }
+    
+    .rbc-allday-cell {
+        height: auto !important;
+
+        .rbc-row-content {
+            min-height: 100px;
+
+            .rbc-addons-dnd-row-body {
+                min-height: rem(50);
+                min-width: rem(90) !important;
+                border-bottom: 1px solid $bg-gray;
+            }
+        }
+
+        .rbc-row-bg {
+            .rbc-day-bg {
+                min-width: rem(89) !important;
+            }
+        }
+        
+    }
+
+    .rbc-label {
+        @include adjust-flex();
+        width: rem(125) !important;
+        max-width: rem(125) !important;
+        min-width: rem(125) !important;
+        font-family: $font-notosan !important;
+        color: $jet;
+        @include break-max(rem(1024)) {
+            width: rem(50) !important;
+            max-width: rem(57) !important;
+            min-width: rem(57) !important;
+        }
+    }
+
+    .rbc-time-content {
+        overflow: hidden;
+
+        @include break-max(rem(720)) {
+            width: max-content;
+        }
+
+        .rbc-label {
+            font-size: rem(14) !important;
+            font-weight: 600;
+            color: $jet;
+            @include break-max(rem(1024)) {
+                font-size: rem(12) !important;
+                
+            }
+        }
+    }
+
+}
+
+.rbc-time-content {
+    border-top: 1px solid #ddd !important;
+    border-left: 1px solid #ddd !important;
+    border-right: 1px solid #ddd !important;
+
+    .rbc-label {
+        @include adjust-flex();
+        width: rem(125) !important;
+        max-width: rem(125) !important;
+        min-width: rem(125) !important;
+        font-size: rem(14);
+        line-height: rem(21);
+        font-weight: 400;
+
+
+        @include break-max(rem(1024)) {
+            width: rem(50) !important;
+            max-width: rem(50) !important;
+            min-width: rem(50) !important;
+        }
+    
+    }
+}
+
+.rbc-allday-cell {
+    display: none;
+}
+
+.t-layout_wrapper_main-showbar .rbc-time-view .rbc-time-header .rbc-time-header-content .rbc-time-header-cell {
+    width: calc(100vw - 442px) !important;
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+
+    .rbc-header {
+        width: calc((100vw - 442px) / 7) !important;
+        min-width: rem(125) !important;
+    }
+
+    .rbc-today {
+        width: 100%;
+    }
+    
+    @include break-max(rem(1024)) {
+        width: calc(100vw - 90px) !important;
+
+        .rbc-header {
+            width: calc((100vw - 90px) / 7) !important;
+            min-width: rem(90) !important;
+        }
+    }
+}

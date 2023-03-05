@@ -1,0 +1,160 @@
+.t-layout {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &-mobile_overlay {
+        width: 100vw !important;
+        height: 100vh !important;
+        position: absolute;
+        background-color: rgba(101, 101, 101, 0.275);
+        z-index: 200;
+        top: 0;
+    }
+
+    
+    &_wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+
+        &_sidebar-mobile {
+            width: rem(350);
+            height: 100%;
+            position: absolute;
+            z-index: 200;
+            transform: translateX(-100%);
+            transition: transform 0.3s linear;
+        }
+        
+       
+        &_header {
+            position: fixed;
+            width: 100%;
+            background-color: $white;
+            z-index: 99;
+        }
+        
+        &_main {
+            @include adjust-flex(space-between, flex-start);
+            padding-top: rem(73);
+            width: 100%;
+            z-index: 0;
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+
+            
+            &_sidebar {
+                background-color: $bright-Navy-blue;
+                width: 0;
+                transform: translateX(-310px);
+                position: relative;
+                z-index: 100;
+                visibility: hidden;
+            }
+            
+            &_child {
+                width: 100%;
+                position: relative;
+                z-index: 0;
+                height: 100% !important;
+                overflow-y: scroll !important;//
+                transition: all 0.15s linear;
+                
+                @include break-max(rem(1024)) {
+                    min-width: 100vw !important;
+                }
+                @include break-max(rem(440)) {
+                    width: fit-content;
+                    min-width: 100vw !important;
+                }
+            }
+            
+            &-showbar > &_sidebar {
+                width: 310px !important;
+                visibility: visible;
+                opacity: 1;
+                transition: all 0.2s linear;
+                transform: translateX(0);
+                
+                
+                @include break-max(rem(1024)) {
+                    position: absolute;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            
+            &-showbar > &_child {
+                transition: all 0.5s linear;
+                width: calc(100% - 310px);
+                
+                @include break-max(rem(1024)) {
+                    min-width: calc(100% - 0px);
+                }
+            }
+        }
+        @include break-max(rem(440)) {
+            position: relative;
+
+            &_sidebar-mobile {
+                width: 70% !important;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+
+            .showfull > &_sidebar-mobile {
+                transform: none;
+            }
+
+            &_child {
+                width: 70%;
+                transition: all 0.5s linear;
+                
+            }
+
+            .t-layout_wrapper_main_sidebar {
+                display: none;
+            }
+        }
+
+    }
+
+    @keyframes isShowBar {
+        0% {
+            width: 0;
+        }
+
+        50% {
+            width: 115px;
+        }
+    
+        100% {
+            width: 270px;
+        }
+    }
+    @keyframes isHideSideBar {
+        0% {
+            width: 230px;
+            opacity: 1;
+        }
+
+        50% {
+            width: 115px;
+            
+        }
+
+        100% {
+            width: 0;
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+

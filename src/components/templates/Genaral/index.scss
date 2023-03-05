@@ -1,0 +1,187 @@
+.o-container {
+    padding-left: rem(20);
+    padding-right: rem(20);
+    @include break-max(rem(1100)) {
+        padding-left: rem(10);
+        padding-right: rem(10);
+    } 
+    @include break-max(rem(440)) {
+        margin-top: 10px;
+    }
+}
+
+.t-genaral {
+    width: 100%;
+    padding: 0 10px;
+
+    &-wrapper {
+        position: relative;
+        height: 80vh;
+        max-width: 483px;
+
+        &_item {
+            @include adjust-flex('center','center');
+            flex-direction: column;
+            width: 100%;
+            margin: 10px 0;
+            
+            .a-typography {
+                text-align: left;
+                width: max-content;
+                margin-right: rem(0);
+                font-weight: 400;
+                margin-bottom: rem(5);
+            }
+    
+            .m-pulldown {
+                width: calc(750px - $get-width);
+                max-width: 255px;
+    
+                &_header {
+                    border: 1px solid $dark-gray;
+                }
+            }
+            @include break-max(rem(440)) {
+                width: 100%;
+                font-size: rem(14);
+            }
+        }
+
+        &_timezone {
+            height: 50px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            max-width: 530px;
+
+            .a-typography {
+                min-width: 140px;
+                max-width: 140px;
+                margin: 0 5px 0 0;
+                text-align: center;
+
+                &:first-child {
+                    text-align: start;
+                }
+                @include break-max(rem(440)) {
+                    text-align: start;
+                    min-width: 100px;
+                    max-width: 100px;
+                    font-size: rem(14);
+                }
+            }
+            
+            .m-pulldown {
+                // width: calc(750px - $get-width);
+                max-width: 130px;
+                min-width: 110px;
+                
+                &_header {
+                    max-width: 130px;
+                    border: 1px solid $dark-gray;
+                    @include break-max(rem(440)) {
+                        max-width: calc(100% - 30px) !important;
+                    }
+                }
+                
+                &_list {
+                    text-align: center;
+                    @include scroll-bars(1, $bright-Navy-blue, $gainsboro, 0, 1, 10);
+                }
+                
+                @include break-max(rem(440)) {
+                    margin: rem(5) rem(0);
+                    min-width: calc(100% - 105px) !important;
+                    max-width: calc(100% - 105px) !important;
+                    font-size: rem(14);
+
+                }
+
+            }
+
+            @include break-max(rem(440)) {
+                max-width: none;
+                width: 100%;
+                flex-wrap: wrap;
+                font-size: rem(14);
+
+            }
+        }
+
+        &_quality {
+            width: calc(750px - $get-width);
+            max-width: 510px;
+            @include break-max(rem(440)) {
+                width: 100%;
+                max-width: none;
+                font-size: rem(14);
+
+                .m-pulldown {
+                    max-width: calc(100%);
+                    width: calc(100% - 30px);
+                }
+            }
+        }
+
+        &_duration {
+            @include break-max(rem(440)) {
+                width: 100%;
+                margin-top: 60px;
+                font-size: rem(14);
+
+                
+                .m-pulldown {
+                    max-width: calc(100%);
+                    width: calc(100% - 30px);
+                }
+            }
+        }
+    
+        &_btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 10%;
+            width: calc(750px - $get-width);
+            margin-top: 60px;
+            max-width: 400px;
+            min-width: 200px;
+            @include adjust-flex(center, center);
+
+            .a-button {
+                &:first-child {
+                    margin-right: 10px;
+                }
+
+                &:last-child {
+                    margin-left: 10px;
+                }
+            }
+            @include break-max(rem(440)) {
+                max-width: calc(100%);
+                width: calc(100% - 45px);
+            }
+        }
+    }
+
+    &_child {
+        padding-left: rem(20);
+        margin: rem(8) 0 rem(40);
+        @include break-max(rem(440)) {
+            padding: 0;
+            width: calc(100%);
+            
+            .a-checkbox {
+                font-size: 14px !important;
+                width: calc(100% - 40px);
+            }
+        }
+    }
+
+
+    @include break-max(rem(440)) {
+        width: calc(100%);
+        padding: 0;
+        margin-left: 30px;
+    }
+}

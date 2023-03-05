@@ -1,0 +1,202 @@
+.o-tabs {
+    $root: &;
+    padding-top: rem(32);
+    position: relative;
+
+
+    &_labels {
+        border-radius: rem(3);
+        overflow: auto hidden;
+        position: relative;
+        @include scroll-bars(0, none, none, 0, 1, 10);
+        // padding: 0 rem(6);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+
+
+        &::after {
+            background: $columbia-blue;
+            content: '';
+            height: rem(1);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 0;
+            width: 100vw;
+            left: 0;
+            @include break-max(rem(440)) {
+                height: 0;
+            }
+        }
+
+        &-default {
+            @include adjust-flex();
+
+            @include small-mobile {
+                @include adjust-flex(flex-start, center);
+            }
+        }
+
+        &-search {
+            @include adjust-flex(flex-start, center);
+            color: $bright-Navy-blue;
+        }
+    }
+
+
+    &_label {
+        color: $bright-Navy-blue;
+        font-weight: 700;
+        text-transform: capitalize;
+        white-space: nowrap;
+        @include font-base(20,30);
+        @include break-max(rem(1100)) {
+            @include font-base(18,24);
+        }
+
+        &-14x20 {
+            @include font-base(14, 20);
+        }
+
+        &-16x22 {
+            @include font-base(16, 22);
+        }
+
+        &-16x24 {
+            @include font-base(16, 24);
+        }
+        
+        @include mobile-down {
+            @include font-base(18, 20);
+        }
+
+        #{$root}_tab-search & {
+            color: $blue-2;
+        }
+
+    }
+
+    &_tab {
+        cursor: pointer;
+        position: relative;
+        
+
+        &-default {
+            background: $white;
+            border: rem(1) solid $columbia-blue;
+            margin-left: rem(2);
+            margin-right: rem(2);
+            padding: rem(9) rem(16);
+    
+            @include mobile-down {
+                margin-left: rem(10);
+                margin-right: rem(10);
+            }
+    
+            &::after {
+                background: $bright-Navy-blue;
+                bottom: 0;
+                content: '';
+                height: rem(4);
+                position: absolute;
+                right: rem(-5);
+                width: rem(4);
+                z-index: $z-1;
+            }
+    
+            &:last-child {
+                &::after {
+                    width: 0;
+                }
+            }
+        }
+
+        &-search {
+            padding: 0 rem(10) rem(4);
+            position: relative;
+
+            &::after {
+                background: $bright-Navy-blue;
+                content: '';
+                height: rem(4);
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                z-index: $z-1;
+                width: 0;
+               
+            }
+
+            &:first-child {
+                padding-left: rem(16);
+                
+            }
+
+            &:not(:first-child) {
+                margin-left: rem(32);
+
+                @include tablet-down {
+                    margin-left: rem(20);
+                }
+                
+            }
+
+           
+        }
+
+        &-active {
+            &#{$root}_tab-default {
+                background-color: $white;
+                border-bottom: 0;
+    
+                #{$root}_label {
+                    color: $bright-Navy-blue;
+                    font-weight: 700;
+                }
+            }
+
+            &#{$root}_tab-search {
+                background: transparent;
+
+                &::after {
+                    transition: all 0.3s linear;
+                    width: 100%;
+                }
+
+                #{$root}_label {
+                    color: $bright-Navy-blue;
+                    font-weight: 700;
+
+                   
+                }
+            }
+        }
+
+        
+
+        &-primary {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &_panel {
+        display: none;
+        
+        &-active {
+            display: block;
+        }
+    }
+
+    &_icon {
+        position: absolute;
+        transform: translateY(10px);
+        z-index: 1000;
+
+        .a-icon {
+            transform: rotate(-90deg);
+
+        }
+    }
+}

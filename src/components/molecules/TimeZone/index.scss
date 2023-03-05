@@ -1,0 +1,15 @@
+.m-timezone {
+    @include adjust-flex(flex-start, center);
+    width: fit-content;
+    border: rem(1) solid $bright-Navy-blue;
+    border-radius: rem(65);
+    padding: rem(6) rem(0);
+
+    .a-typography {
+        padding: rem(0) rem(10);
+
+        &:first-child {
+            border-right: rem(1) solid $bright-Navy-blue;
+        }
+    }
+}

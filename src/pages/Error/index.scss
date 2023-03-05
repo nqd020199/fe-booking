@@ -1,0 +1,50 @@
+.p-error_wrapper {
+    width: 100vw;
+    height: 100vh;
+    @include adjust-flex(center, center);
+    position: relative;
+    z-index: 2000;
+    text-align: center;
+
+    &::after {
+        content: url('../../assets/images/calendar-login.png');
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        opacity: 0.2;
+        
+    }
+
+    &_h1 {
+        font-size: 130px;
+        line-height: rem(150);
+        font-weight: 900;
+        color: $white;
+        text-shadow: 1px 1px 8px $jet;
+    }
+
+    &_h2 {
+        font-size: 30px;
+        line-height: rem(50);
+        font-weight: 900;
+        color: $white;
+    }
+
+    .p-error_btn {
+        width: 100vw;
+        @include adjust-flex(center, center);
+
+        .a-button {
+            width: max-content;
+            margin-top: 20px;
+            padding: 16px 40px;
+            margin-left: 10px;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 700;
+            position: relative;
+            z-index: 200;
+        }
+    }
+}

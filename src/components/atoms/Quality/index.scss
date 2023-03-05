@@ -1,0 +1,18 @@
+.a-quality {
+    border: 1px solid $bright-Navy-blue;
+    border-radius: rem(8);
+    width: 100%;
+    
+    &_input {
+        @include adjust-flex(space-between, center);
+        width: 100%;
+        padding: rem(6) rem(8);
+
+        p {
+            font-weight: 400;
+            font-size: rem(16);
+            line-height: rem(24);
+            color: $dim-gray;
+        }
+    }
+}

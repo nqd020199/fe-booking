@@ -1,0 +1,395 @@
+.o-popup {
+    $root: &;
+    border: 0;
+    border-radius: rem(8);
+    height: 100%;
+    outline: 0;
+    position: fixed;
+    position: relative;
+    width: 100%;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &_wrapClose {
+        padding: 0;
+        position: absolute;
+        right: rem(16);
+        top: rem(16);
+        z-index: $z-modal + 2;
+
+        @include tablet-down {
+            right: rem(8);
+            top: rem(8);
+        }
+
+        &-outside {
+            right: rem(36);
+            top: rem(36);
+
+            @include break-max(1365px) {
+                right: rem(2);
+                top: 1%;
+            }
+
+            @include mobile-down {
+                right: rem(2);
+                top: rem(6);
+            }
+
+            .a-icon {
+                @include mobile-down {
+                    height: 22px;
+                    width: 22px;
+                }
+            }
+        }
+    }
+
+    &_close {
+        @include reset-button();
+        background: transparent;
+
+        .a-icon {
+            @include mobile-down {
+                height: 22px;
+                width: 22px;
+            }
+        }
+    }
+
+    &_main {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+        width: 100%;
+        @include break-max(rem(440)) {
+            align-items: center;
+        }
+    }
+      
+    &_header {
+        padding-left: rem(64);
+        padding-right: rem(64);
+  
+        @include mobile-down {
+            padding-left: rem(16);
+            padding-right: rem(16);
+        }
+    }
+  
+    &_wrapper {
+        background: $white;
+        box-shadow: 0 0 rem(24) rem(1) $black;
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: calc(100vh - #{rem(108)});
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        z-index: 103;
+
+        @include tablet-down {
+            max-height: calc(100vh - #{rem(80)});
+        }
+
+        @include mobile-down {
+            max-height: calc(100vh - #{rem(60)});
+        }
+        @include break-max(rem(440)) {
+            height: fit-content;
+            max-height: unset;
+        }
+    }
+
+    &_body {
+        @include scroll-bars(4, $bright-Navy-blue);
+        overflow-y: auto;
+
+        #{$root}-scrollBarMayGreen & {
+            @include scroll-bars(2, $may-green, $gainsboro, 0, 1, 10);
+        }
+    }
+
+    // modifiers
+    &-notify {
+        color: $white;
+        height: 100%;
+        max-height: unset;
+        max-width: unset;
+        width: 100%;
+
+        &_head {
+            gap: rem(8);
+        }
+  
+        &_message {
+            padding-left: rem(48);
+        }
+  
+        #{$root}_main {
+            max-width: rem(460);
+            align-items: center;
+        }
+  
+        #{$root}_body {
+            max-width: rem(460);
+            padding: 0;
+        }
+  
+        #{$root}_wrapper {
+            background: $white;
+            border-radius: rem(18);
+            box-shadow: 0 3px 6px -4px rgba($black, 0.12),
+                0 6px 16px rgba($black, 0.08), 0 9px 28px 8px rgba($black, 0.05);
+            padding: rem(23) rem(15);
+        }
+    }
+
+    &-position {
+        color: $white;
+        height: 100%;
+        max-height: unset;
+        max-width: unset;
+        width: 100%;
+
+        &_head {
+            gap: rem(8);
+        }
+  
+        &_message {
+            padding-left: rem(48);
+        }
+  
+        #{$root}_main {
+            max-width: rem(580);
+        }
+  
+        #{$root}_wrapper {
+            background: $white;
+            border-radius: rem(20);
+            box-shadow: rem(0) rem(2) rem(20) rgba(0, 0, 0, 0.25);
+            padding: rem(35) rem(50);
+        }
+    }
+
+    &-positions {
+        color: $white;
+        height: 100%;
+        max-height: unset;
+        max-width: unset;
+        width: 100%;
+
+        &_head {
+            gap: rem(8);
+        }
+  
+        &_message {
+            padding-left: rem(48);
+        }
+  
+        #{$root}_main {
+            max-width: rem(783);
+            align-items: center;
+        }
+  
+        #{$root}_wrapper {
+            background: $white;
+            border-radius: rem(20);
+            box-shadow: rem(0) rem(2) rem(20) rgba(0, 0, 0, 0.25);
+            padding: rem(35) rem(50);
+            min-height: rem(500);
+        }
+        #{$root}_body {
+            height: 100%;
+            width: 100%;
+        }
+
+    }
+
+    &-medium {
+        color: $white;
+        height: 100%;
+        max-height: unset;
+        max-width: unset;
+        width: 100%;
+
+        &_head {
+            gap: rem(8);
+        }
+  
+        &_message {
+            padding-left: rem(48);
+        }
+  
+        #{$root}_main {
+            max-width: rem(583);
+            align-items: center;
+        }
+  
+        #{$root}_wrapper {
+            background: $white;
+            border-radius: rem(20);
+            box-shadow: rem(0) rem(2) rem(20) rgba(0, 0, 0, 0.25);
+            padding: rem(35) rem(50);
+            height: 400px;
+
+            @include break-max(rem(440)) {
+                padding: rem(35) rem(20);
+            } 
+        }
+        #{$root}_body {
+            height: 100%;
+            width: 100%;
+        }
+
+    }
+
+    &-modalSearch {
+        #{$root}_wrapper {
+            background-color: transparent;
+            box-shadow: none;
+        }
+        #{$root}_wrapClose {
+            display: none;
+        }
+    }
+
+    &-booking {
+        color: $white;
+        height: 100%;
+        max-height: unset;
+        max-width: unset;
+        width: 100%;
+
+        &_head {
+            gap: rem(8);
+        }
+  
+        &_message {
+            padding-left: rem(48);
+        }
+  
+        #{$root}_main {
+            max-width: rem(680);
+            align-items: center;
+        }
+  
+        #{$root}_body {
+            max-width: rem(680);
+            padding: 0;
+        }
+  
+        #{$root}_wrapper {
+            background: $white;
+            border-radius: rem(20);
+            box-shadow: 0 0 rem(60) rem(-2) rgba($black, 0.25);
+        }
+        #{$root}_wrapClose {
+            display: none;
+        }
+    }
+
+    &-nofityInfomation {
+        color: $jet;
+        height: 100%;
+        max-height: unset;
+        max-width: unset;
+        width: 100%;
+
+        &_head {
+            gap: rem(8);
+        }
+  
+        &_message {
+            padding-left: rem(48);
+        }
+  
+        #{$root}_main {
+            max-width: rem(822);
+            align-items: center;
+        }
+  
+        #{$root}_body {
+            max-width: rem(822);
+            padding: 0;
+            height: 100%;
+        }
+  
+        #{$root}_wrapper {
+            background: $white;
+            border-radius: rem(20);
+            height: rem(520);
+            box-shadow: 0 0 rem(60) rem(-2) rgba($black, 0.25);
+            padding: rem(10) rem(0)  rem(0)  rem(0);
+            @include break-max(rem(440)) {
+                height: max-content;
+            }
+        }
+        #{$root}_wrapClose {
+            display: none;
+        }
+    }
+}
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.ReactModal__Overlay {
+    background: rgba($black, 0.3);
+    inset: 0;
+    opacity: 0;
+    position: fixed;
+    transform: translateY(-100%);
+    transition: all 500ms ease-in-out;
+    z-index: $z-modal;
+    transition-delay: 500ms;
+
+    &::after {
+        background: rgba($black, 0.74);
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 102;
+    }
+
+    &--open {
+        overflow: hidden;
+        @include tablet-up {
+            padding-right: rem(7);
+        }
+    }
+
+    &--after-open {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &--before-close {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}

@@ -1,0 +1,316 @@
+/* stylelint-disable max-nesting-depth */
+.p-department {
+    width: calc(100vw - 310px);
+    height: calc(100vh - 73px);
+    @include adjust-flex(start, start);
+    overflow: hidden;
+    padding-top: 8px;
+
+    &_list {
+        display: grid;
+        width: 50%;
+        grid-template-columns: repeat((2, 1fr));
+        border-right: rem(2) solid $columbia-blue;
+        padding: rem(12) rem(20) rem(0);
+        max-height: 100vh;
+        overflow: scroll;
+        grid-auto-rows: min-content;
+        height: 100%;
+
+        button {
+            flex: 1;
+            width: 90%;
+            box-shadow: rem(7) rem(7) rem(22) $columbia-blue, inset rem(-1) rem(-1) rem(2) $black-02;
+            border-radius: rem(10);
+            height: rem(70);
+            margin: rem(10) rem(25) !important;
+            padding: 0;
+
+            &:hover {
+                background-color: $columbia-blue;
+            }
+        }
+
+        @include break-max(rem(1024)) {
+            grid-template-columns: repeat((1, 1fr));
+            padding: rem(47) rem(10) rem(0);
+            width: 100%;
+
+            button {
+                width: 90%;
+            }
+        }
+        
+    }
+
+    &_desc {
+        position: relative;
+        margin: rem(12);
+        height: calc(100vh - 114px);
+        width: 44%;
+        min-height: 270px;
+        
+        &-detail_bg {
+            max-height: calc(100vh - 0px);
+            width: calc(100%);
+            height: 100%;
+            transition: all 0.5s linear;
+            position: relative;
+
+            .a-image {
+                width: 100%;
+                height: calc(100% - 0px);
+                transition: all 0.5s linear;
+
+                &::after {
+                    content: url('~assets/images/dept1.png');
+                    position: absolute;
+                    top: 30%;
+                    z-index: 0;
+                    left: calc(50%);
+                    transform: scale(0.6);
+                    transition: all 0.5s linear;
+                    
+                    @include break-max(rem(1580)) {
+                        transform: scale(0.6);
+                        left: calc(55% - 60px);
+                        
+                    }
+                    @include break-max(rem(1440)) {
+                        transform: scale(0.5);
+                        left: calc(45% - 30px);
+                        top: 40%;
+                        
+                    }
+                    @include break-max(rem(1280)) {
+                        transform: scale(0.4);
+                        left: calc(40% - 60px);
+                        top: 45%;
+                        
+                    }
+                    @include break-max(rem(1024)) {
+                        transform: scale(0.6);
+                        left: calc(47% - 30px);
+                        top: 40%;
+                        z-index: 0;
+
+                    }
+                    @include break-max(rem(780)) {
+                        display: none;
+                    }
+                    
+                }
+                
+                &::before {
+                    content: url('~assets/images/dept2.png');
+                    position: absolute;
+                    top: 35%;
+                    z-index: 0;
+                    left: calc(0% + 30px);
+                    transform: scale(0.7);
+                    transition: all 0.5s linear;
+
+                    @include break-max(rem(1580)) {
+                        transform: scale(0.6);
+                        left: calc(0% - 10px);
+                    }
+                    @include break-max(rem(1440)) {
+                        transform: scale(0.5);
+                        left: calc(0% - 30px);
+                        top: 35%;
+
+                    }
+
+                    @include break-max(rem(1280)) {
+                        transform: scale(0.4);
+                        left: calc(0% - 50px);
+                        top: 35%;
+
+            
+                    }
+                    @include break-max(rem(1024)) {
+                        transform: scale(0.6);
+                        left: calc(0% - 10px);
+                        top: 35%;
+
+            
+                    }
+                    @include break-max(rem(780)) {
+                        display: none;
+                    }
+                    
+                }
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: fill;
+                    max-width: 710.062px;
+                    transition: all 0.5s linear;
+                    @include break-max(rem(780)) {
+                        max-width: 780px;
+
+                    }
+                }
+            }
+
+            &_item {
+                &_content {
+                    position: absolute;
+                    left: calc(90/820*100%);
+                    top: calc(138/867*100%);
+                }
+
+                &_info {
+                    margin: rem(10) 0;
+
+                    &_icon {
+                        @include adjust-flex(start, start);
+                        margin: rem(6) rem(0);
+
+                        .a-typography {
+                            margin-left: rem(11);
+                            width: 82%;
+                            // @include text-overflow(); }
+                            @include break-max(rem(440)) {
+                                @include text-overflow(2); }
+                        }
+
+                        .a-icon {
+                            min-width: rem(24);
+                        }
+                    }
+
+                }
+
+                &_btn {
+                    width: 100%;
+                    @include adjust-flex(center, center);
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 80px;
+                    max-width: rem(700);
+
+                    .a-button {
+                        max-width: 30%;
+                        min-height: rem(44);
+
+                        &:last-child {
+                            margin-left: rem(46);
+                        }
+                    }
+                }
+            }
+
+            
+        }
+
+        @include break-max(rem(1024)) {
+            margin: rem(42) rem(12) rem(0) rem(0);
+            width: 60%;
+
+        }
+        @include break-max(rem(780)) {
+            height: calc(100vh - 330px);
+            width: 44%;
+        }
+    }
+
+    @include break-max(rem(1024)) {
+        width: calc(100vw - 0px);
+        height: calc(100vh - 75px);
+    
+        &_list {
+            width: 40%;
+        }
+    }
+    @include break-max(rem(780)) {
+        flex-direction: column-reverse;
+        width: 100%;
+        margin-left: 5px;
+        height: calc(100vh - 80px);
+        overflow: hidden;
+
+        &_desc {
+            margin: 0 auto;
+            width: 100%;
+            height: 35%;
+            @include adjust-flex(center, center);
+
+            &-detail_bg {
+                &_item {
+                    &_content {
+                        position: absolute;
+                        left: calc(90/820*100%);
+                        top: calc(80/867*100%);
+
+                        .p-department_desc-detail_bg_item_title {
+                            @include break-max(rem(440)) {
+                                .a-typography {
+                                    font-size: rem(16);
+                                }
+                            }
+                            
+                        }
+                    }
+    
+                    &_info {
+                        margin: rem(10) 0;
+    
+                        &_icon {
+                            @include adjust-flex(start, start);
+                            margin: rem(6) rem(0);
+    
+                            .a-icon {
+                                width: rem(24);
+                            }
+
+                            .a-typography {
+                                margin-left: rem(11);
+                            }
+                        }
+
+                        
+                    }
+
+    
+                    &_btn {
+                        width: 100%;
+                        @include adjust-flex(center, center);
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 20px;
+                        max-width: rem(700);
+                        
+    
+                        .a-button {
+                            max-width: 30%;
+                            min-height: rem(44);
+    
+                            &:last-child {
+                                margin-left: rem(46);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &_list {
+            width: 100%;
+            height: 65%;
+            display: grid;
+            grid-template-columns: repeat((2, 1fr));
+            border: unset;
+            padding: 0;
+            padding-bottom: 60px;
+
+            button {
+                margin: 6px !important;
+                padding: 6px !important;
+            }
+        }
+    }
+}

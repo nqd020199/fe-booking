@@ -1,0 +1,28 @@
+.m-duaration {
+    @include adjust-flex(space-between, center);
+    border: rem(1) solid $bright-Navy-blue;
+    border-radius: rem(30);
+    width: fit-content;
+    overflow: hidden;
+    max-height: rem(40);
+
+    &_btn {
+        height: 100%;
+        background-color: $bright-Navy-blue;
+        padding: 100vw rem(0);
+        cursor: pointer;
+
+        .a-icon {
+            padding: rem(7) rem(18)rem(8);
+        }
+    }
+
+    .a-typography {
+        padding: rem(6) rem(12);
+        width: max-content;
+
+
+    }
+
+
+}

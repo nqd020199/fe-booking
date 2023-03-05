@@ -1,0 +1,30 @@
+/* stylelint-disable declaration-property-value-disallowed-list */
+.m-viewers {
+    @include adjust-flex(flex-start, center);
+    width: max-content;
+    border: rem(1) solid $bright-Navy-blue;
+    overflow: hidden;
+    border-radius: rem(30);
+
+
+    &_item {
+        padding: rem(6) rem(14.5);
+        min-width: rem(80);
+        width: max-content;
+        cursor: pointer;
+        border-left: rem(1) solid $bright-Navy-blue;
+
+        &:first-child {
+            border: none;
+        }
+    }
+
+    .active {
+        background-color: $bright-Navy-blue;
+        box-shadow: inset 0 rem(3) rem(4) $black-025;
+
+        .a-typography {
+            color: $white;    
+        }
+    }
+}

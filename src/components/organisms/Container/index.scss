@@ -1,0 +1,110 @@
+.o-container {
+    height: 100%;
+    transition: all 0.5s linear;
+
+    @include break-min($standard-viewport) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: $standard-viewport;
+        padding-left: rem(120);
+        padding-right: rem(120);    
+    }
+
+    &-noPaddingRight {
+        padding-right: 0;
+    }
+
+    &-noPaddingLeft {
+        padding-left: 0;
+    }
+
+    &-fullScreen {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &-form {
+        min-width: rem(750);
+        min-height: rem(670);
+        max-height: rem(670);
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+        display: flex;
+        padding: 40px;
+        overflow: hidden;
+        z-index: 2;
+        position: relative;
+        @include break-max(880px) {
+            max-height: rem(550);
+            min-height: rem(550);
+            padding: rem(20) rem(40) rem(10);
+        }
+    }
+
+    &-fullScreenTabletUp {
+        @include break(992px, 1365px) {
+            max-width: 100%;
+        }
+        @include tablet-up {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &_row {
+        @include break-min($standard-viewport) {
+            margin-left: rem(-16) !important;
+            margin-right: rem(-16) !important;
+        }
+    }
+
+    &_col {
+        @include break-min($standard-viewport) {
+            padding-left: rem(16) !important;
+            padding-right: rem(16) !important;
+        }
+    }
+}
+
+.o-container-shadown {
+    min-width: 65%;
+    min-height: 750px;
+    background-color: $gray-blur;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: rem(40) rem(0);
+    // overflow: hidden;
+    z-index: 2;
+    position: relative;
+}
+
+.o-container-smaillForm {
+    width: 400px;
+    height: 400px;
+    background-color: $gray-blur;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+}
+
+@include break-max(880px) {
+    .o-container {
+        min-width: 360px;
+        transition: all 1s linear;
+    }
+}
+
+.o-container-left {
+    // width: 100%;
+    height: max-content !important;
+    display: flex;
+    justify-content: start;
+    padding-top: rem(40);
+    min-width: 375px !important;
+}
+

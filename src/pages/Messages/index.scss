@@ -1,0 +1,34 @@
+.p-message {
+    width: 100%;
+    display: grid;
+    grid-template-columns: calc(340/1920*100%) calc(1240/1920*100%) calc(340/1920*100%);
+    position: relative;
+    height: calc(100vh - 73px);
+    overflow: hidden;
+
+    @include  desktop-down {
+        grid-template-columns: 35% 65% 0;
+    }
+
+    &-user {
+        grid-template-columns: calc(340/1920*100%) calc(1580/1920*100%);
+        @include  desktop-down {
+            grid-template-columns: 35% 65% 0;
+        }
+
+    }
+
+    &_border {
+        position: absolute;
+        height: 100vh;
+        width: rem(1);
+        background-color: $gainsboro;
+        top: 0;
+        left: 80%;
+
+    }
+
+    &_contact {
+        box-shadow: rem(-1) 0 rem(4) $black-03;
+    }
+}

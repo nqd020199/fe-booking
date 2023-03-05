@@ -1,0 +1,187 @@
+.o-notify {
+    $root: &;
+
+    &_main {
+        &_title {
+            @include adjust-flex(flex-start);
+        }
+
+        &-default {
+            #{$root}_btn {
+                display: none;
+            }
+        }
+
+        &-twoButton {
+            #{$root}_title {
+                .a-typography {
+                    @include font-base(); 
+                    color: $jet;
+                }
+
+
+                &_message {
+                    .a-typography {
+                        @include font-base(14,21); }
+                }
+            }
+        }
+
+        &-onlyButton {
+            #{$root}_icon {
+                display: none;
+            }
+
+            .o-notify_main_title {
+                justify-content: center;
+            }
+            #{$root}_title {
+                h3 {
+                    display: none;
+                }
+
+                &_message {
+                    .a-typography {
+                        @include font-base(); 
+                    }
+                    text-align: center;
+                }
+            }
+            #{$root}_btn {
+                margin: rem(25) 0 rem(40);
+            }
+        }
+
+        &_animate {
+            @include adjust-flex(flex-start,center);
+            flex-direction: column;
+
+            &_icon {
+                margin-bottom: rem(30);
+                margin-top: rem(10);
+                z-index: 10;
+                border-radius: 50%;
+                position: relative;
+                z-index: 9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10;
+                background-color: $white;
+
+                &_loading {
+                    animation: rotate 3s ease-in-out forwards;
+                }
+                
+                &_done {
+                    animation: width_ 0.5s linear forwards;
+                    
+                }
+            }
+
+
+            &_title {
+                text-align: center;
+            }
+        }
+    }
+
+    &_title {
+        margin-left: rem(8);
+
+
+        &_message {
+            margin-top: rem(2);
+        }
+    }
+
+    &_mainLogin {
+        color: $dim-gray;
+        text-align: center;
+
+        #{$root}_title {
+            margin: rem(14) 0 rem(4);
+        }
+
+        span {
+            color: $bright-Navy-blue;
+        }
+
+        &_btn {
+            @include adjust-flex();
+            margin-top: rem(10);
+    
+            .a-button {
+                display: inline;
+                width: auto;
+                font-weight: 700;
+                padding: rem(8) rem(20);
+                border-radius: rem(8);
+                box-shadow: inset rem(0) rem(4) rem(4) $black-025;
+    
+                &:last-child {
+                    margin-left: rem(10);
+                }
+            }
+        }
+
+    }
+
+  
+    &_btn {
+        @include adjust-flex();
+        margin: rem(31) 0 rem(20);
+        
+        .a-button {
+            padding: rem(10) rem(40);
+            display: inline;
+            width: auto;
+            border-radius: rem(8);
+            width: rem(158);
+
+
+            &:last-child {
+                margin-left: rem(10);
+            }
+        }
+    }
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(360deg);
+    }
+
+    50% {
+        transform: rotate(720deg);
+    }
+
+    75% {
+        transform: rotate(1080deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes width_ {
+    0% {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(0.9);
+    }
+}

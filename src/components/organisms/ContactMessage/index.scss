@@ -1,0 +1,128 @@
+.o-contact {
+    display: grid;
+    grid-template-rows: 10% 82% 3%;
+    height: 100vh;
+
+    &_search {
+        margin: 0 rem(15);
+
+        .a-typography {
+            margin: rem(14) 0 rem(10);
+        }
+
+        .a-input_error {
+            display: none;
+        }
+
+        .a-input_wrap {
+            margin-bottom: rem(15);
+           
+
+            input {
+                max-height: rem(36);
+
+                &::placeholder {
+                    @include font-base(14,21);
+                }
+            }
+        }
+    }
+
+    &_user {
+        flex-direction: column;
+        overflow: auto;
+        margin-top: rem(10);
+
+        .o-cardContact {
+            min-height: rem(44);
+            cursor: pointer;
+            width: 100%;
+            border-radius: 0.2rem;
+            padding: 0.4rem;
+            @include adjust-flex(space-between, center);
+            // margin: rem(12) rem(12);
+            padding: rem(12) rem(12);
+
+            &_avatar {
+                .a-image {
+                    width: rem(44);
+                    height: rem(44);
+                    border-radius: 50%;
+
+                    &::before {
+                        padding-bottom: 0 !important;
+                    }
+                }
+            }
+
+            &_desc {
+                flex: 1;
+                margin-left: rem(10);
+                max-width: 83%;
+
+                &-username {
+                    @include adjust-flex(space-between, center);
+
+                }
+
+                &-msg {
+                    min-height: rem(20);
+                    margin-top: rem(5);
+                    @include adjust-flex(space-between, center);
+                }
+
+                &-msgText {
+                    max-width: 80%;
+                    @include text-overflow(1); 
+                }
+
+                &-msgStatus {
+                    .a-typography {
+                        background-color: $bright-Navy-blue;
+                        border-radius: 50%;
+                        width: rem(20);
+                        height: rem(20);
+                        @include adjust-flex();
+                    }
+                }
+            }
+
+        }
+
+        .active {
+            background-color: $columbia-blue;
+        }
+
+        &-active {
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                background-color: $columbia-blue;
+
+            }
+
+        }
+    }
+
+    &_du {
+        background-color: transparent;
+    }
+}
+
+// .o-cardContact {
+//     background-color: #ffffff34;
+//     min-height: 5rem;
+//     cursor: pointer;
+//     width: 90%;
+//     border-radius: 0.2rem;
+//     padding: 0.4rem;
+//     @include adjust-flex(space-between, center);
+//     transition: 0.5s ease-in-out;
+
+//     &_desc {
+//         &-username {
+//             @include adjust-flex(space-between, center);
+
+//         }
+//     }
+// }

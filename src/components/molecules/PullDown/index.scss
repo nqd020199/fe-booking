@@ -1,0 +1,176 @@
+.m-pulldown {
+    $root: &;
+    position: relative;
+    width: 100%;
+
+    &_label {
+        color: $davys-grey;
+        display: inline-block;
+        font-weight: 400;
+        margin-bottom: rem(8);
+        @include font-base(14,21);
+    }
+
+    &_required {
+        color: $sinopia;
+        margin-left: rem(2);
+        @include font-base();
+    }
+
+    &_header {
+        background: $white;
+        cursor: pointer;
+        font-weight: 400;
+        position: relative;
+        width: 100%;
+        border: rem(1) solid $dark-gray;
+        border-radius: rem(8);
+        overflow: auto;
+        @include font-base(14, 22);
+        height: rem(40);
+        z-index: 0;
+
+        &_content {
+            align-items: center;
+            border-radius: rem(2);
+            color: $raisin-black;
+            display: flex;
+            flex-grow: 1;
+            height: 100%;
+            justify-content: space-between;
+            overflow: hidden;
+            padding: rem(5) rem(9) rem(5) rem(12);
+            white-space: nowrap;
+            width: 100%;
+            @include font-base();
+
+
+            span {
+                @include text-overflow(8);
+                font-size: rem(14);
+                color: $jet;
+            }
+
+            &.placeholder {
+                color: $taupe-gray;
+                font-weight: 400;
+                cursor: pointer;
+                background: $white;
+                @include font-base();
+
+                span {
+                    color: $taupe-gray;
+                    font-weight: 400;
+                    
+                }
+            }
+        }
+
+        &-error {
+            border-color: $sinopia;
+        }
+
+        &-active {
+            border: rem(1) solid  $bright-Navy-blue !important;
+        }
+    }
+
+    &_search {
+        padding: rem(5) rem(9) rem(5) rem(12);
+        background: transparent;
+        border: 0;
+        color: $jet;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        @include font-base(14, 21);
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &_arrow {
+        flex-shrink: 0;
+        height: rem(16);
+        position: relative;
+        width: rem(22);
+
+        &::after {
+            background: url('~assets/icons/ic_dropDown.svg') no-repeat;
+            background-position: center;
+            background-size: rem(22);
+            content: '';
+            height: rem(16);
+            left: 0;
+            position: absolute;
+            top: 0;
+            transition: $transition;
+            width: rem(22);
+        }
+
+        &.opened {
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &_wrapper {
+        box-shadow: rem(3) rem(3) rem(15) $black-025;
+        position: absolute;
+        width: 100%;
+        padding: rem(10) 0;
+        border-radius: rem(8);
+        z-index: 99;
+        background-color: $white;
+    }
+
+    &_list {
+        background-color: $white;
+        font-weight: 400;
+        margin: 0;
+        max-height: rem(168);
+        overflow-y: auto;
+        padding: 0;
+        @include font-base(16, 24);
+        @include scroll-bars(6, $bright-Navy-blue);
+        color: $jet;
+        position: relative;
+        z-index: 2000;
+    }
+
+    &_item {
+        cursor: pointer;
+        list-style: none;
+        padding: rem(5) rem(12);
+        white-space: normal;
+        margin: 0 rem(7);
+        color: $jet;
+        border-radius: rem(8);
+        @include font-base(14, 21);
+
+        &:hover {
+            background-color: $bright-Navy-blue;
+            color: $white;
+        }
+    }
+
+    &_errorMessage {
+        color: $sinopia;
+        margin-top: rem(5);
+        @include font-base(12, 16);
+    }
+
+    &-disabled {
+        #{$root}_header {
+            cursor: initial;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+    }
+
+   
+}
