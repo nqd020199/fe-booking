@@ -363,26 +363,26 @@
     display: none;
 }
 
-.t-layout_wrapper_main-showbar .rbc-time-view .rbc-time-header .rbc-time-header-content .rbc-time-header-cell {
-    width: calc(100vw - 442px) !important;
-    display: grid !important;
-    grid-template-columns: repeat(7, 1fr) !important;
+// .t-layout_wrapper_main-showbar .rbc-time-view .rbc-time-header .rbc-time-header-content .rbc-time-header-cell {
+//     width: calc(100vw) !important;
+//     display: grid !important;
+//     grid-template-columns: repeat(7, 1fr) !important;
 
-    .rbc-header {
-        width: calc((100vw - 442px) / 7) !important;
-        min-width: rem(125) !important;
-    }
+//     .rbc-header {
+//         width: calc((100vw) / 7) !important;
+//         min-width: rem(125) !important;
+//     }
 
-    .rbc-today {
-        width: 100%;
-    }
+//     .rbc-today {
+//         width: 100%;
+//     }
     
-    @include break-max(rem(1024)) {
-        width: calc(100vw - 90px) !important;
+//     @include break-max(rem(1024)) {
+//         width: calc(100vw) !important;
 
-        .rbc-header {
-            width: calc((100vw - 90px) / 7) !important;
-            min-width: rem(90) !important;
-        }
-    }
-}
+//         .rbc-header {
+//             width: calc((100vw) / 7) !important;
+//             min-width: rem(90) !important;
+//         }
+//     }
+// }

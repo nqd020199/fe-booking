@@ -8,7 +8,7 @@
         height: 100vh !important;
         position: absolute;
         background-color: rgba(101, 101, 101, 0.275);
-        z-index: 200;
+        z-index: 100;
         top: 0;
     }
 
@@ -78,6 +78,7 @@
                 opacity: 1;
                 transition: all 0.2s linear;
                 transform: translateX(0);
+                position: absolute;
                 
                 
                 @include break-max(rem(1024)) {
@@ -89,7 +90,7 @@
             
             &-showbar > &_child {
                 transition: all 0.5s linear;
-                width: calc(100% - 310px);
+                width: calc(100%);
                 
                 @include break-max(rem(1024)) {
                     min-width: calc(100% - 0px);
